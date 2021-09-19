@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/overlay_gradient.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12864583333333332" />
+        <entry key="app/src/main/res/layout/collpasing_bototm.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/layout/collpasing_bottom.xml" value="0.19540229885057472" />
+        <entry key="app/src/main/res/layout/fragment_article_details.xml" value="0.11842105263157894" />
+        <entry key="app/src/main/res/layout/fragment_collapsing_toolbar.xml" value="0.12447916666666667" />
+        <entry key="app/src/main/res/layout/fragment_details_recycler.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/fragment_details_with_carousel.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/fragment_top_headlines.xml" value="0.204" />
+        <entry key="app/src/main/res/layout/item_article.xml" value="0.21348314606741572" />
+        <entry key="app/src/main/res/layout/item_carousel.xml" value="0.10240963855421686" />
+        <entry key="app/src/main/res/layout/item_details_with_carousel.xml" value="0.14" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

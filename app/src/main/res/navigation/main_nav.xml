@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav.xml"
+    app:startDestination="@id/topHeadlinesFragment">
+
+    <fragment
+        android:id="@+id/topHeadlinesFragment"
+        android:name="com.sample.newsandroidarchitecture.ui.TopHeadlinesFragment"
+        tools:layout="@layout/fragment_top_headlines">
+
+        <action
+            android:id="@+id/topHeadline_to_details_view"
+            app:destination="@id/detailsViewFragment">
+
+            <argument
+                android:name="article_details"
+                android:defaultValue="@null"
+                app:argType="com.sample.newsandroidarchitecture.model.Article[]"
+                app:nullable="true" />
+            <argument
+                android:name="position"
+                android:defaultValue="0"
+                app:argType="integer" />
+
+            <argument
+                android:name="id"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsViewFragment"
+        android:name="com.sample.newsandroidarchitecture.ui.DetailsViewFragment"
+        tools:layout="@layout/fragment_article_details">
+
+        <argument
+            android:name="article_details"
+            android:defaultValue="@null"
+            app:argType="com.sample.newsandroidarchitecture.model.Article[]"
+            app:nullable="true" />
+
+
+        <argument
+            android:name="position"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="id"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>
