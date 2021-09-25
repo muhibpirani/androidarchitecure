@@ -15,3 +15,6 @@
 This project can help android developers when starting a new project and writing code from scratch giving you a good headstart and a clean architecture
 
 PR are accepted.
+
+Carousel Views taken from: [PagingImageGallery](https://github.com/dadouf/PagingImageGallery)
+
