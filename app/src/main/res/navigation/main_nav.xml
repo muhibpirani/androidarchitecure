@@ -10,29 +10,6 @@
         android:name="com.sample.newsandroidarchitecture.ui.TopHeadlinesFragment"
         tools:layout="@layout/fragment_top_headlines">
 
-        <action
-            android:id="@+id/topHeadline_to_details_view"
-            app:destination="@id/detailsViewFragment">
-
-            <argument
-                android:name="article_details"
-                android:defaultValue="@null"
-                app:argType="com.sample.newsandroidarchitecture.model.Article[]"
-                app:nullable="true" />
-            <argument
-                android:name="position"
-                android:defaultValue="0"
-                app:argType="integer" />
-
-            <argument
-                android:name="id"
-                android:defaultValue="@null"
-                app:argType="string"
-                app:nullable="true" />
-
-
-        </action>
-
     </fragment>
 
     <fragment

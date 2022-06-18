@@ -38,9 +38,9 @@ class DetailsViewFragment :
             view.startCircularReveal(true)
         } else {
             sharedElementEnterTransition =
-                TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+                TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
             sharedElementReturnTransition =
-                TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+                TransitionInflater.from(requireContext()).inflateTransition(android.R.transition.move)
         }
         position = DetailsViewFragmentArgs.fromBundle(requireArguments()).position
         articles = DetailsViewFragmentArgs.fromBundle(requireArguments()).articleDetails?.toList()

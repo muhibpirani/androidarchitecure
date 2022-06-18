@@ -1,10 +1,8 @@
 package com.sample.newsandroidarchitecture.ui
 
 import android.view.View
-import android.view.animation.AnimationUtils
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import app.tubbr.ui.base.BaseFragment
@@ -48,12 +46,12 @@ class TopHeadlinesFragment : BaseFragment<TopHeadlinesViewModel, FragmentTopHead
             override fun onClick(imageView: View, data: List<Article>, position: Int) {
                 // Safe Args
                 val positions = imageView.findLocationOfCenterOnTheScreen()
-                val action =
-                    TopHeadlinesFragmentDirections.topHeadlineToDetailsView(
-                        data.toTypedArray(),
-                        position
-                    )
-                findNavController().navigate(action)
+                /* val action =
+                     TopHeadlinesFragmentDirections.topHeadlineToDetailsView(
+                         data.toTypedArray(),
+                         position
+                     )
+                 findNavController().navigate(action)*/
             }
 
         }
@@ -80,13 +78,13 @@ class TopHeadlinesFragment : BaseFragment<TopHeadlinesViewModel, FragmentTopHead
                 val extras = FragmentNavigatorExtras(
                     imageView to data[position].id.toString()
                 )
-                val action =
-                    TopHeadlinesFragmentDirections.topHeadlineToDetailsView(
-                        data.toTypedArray(),
-                        position,
-                        data[position].id.toString()
-                    )
-                findNavController().navigate(action, extras)
+                /* val action =
+                     TopHeadlinesFragmentDirections.topHeadlineToDetailsView(
+                         data.toTypedArray(),
+                         position,
+                         data[position].id.toString()
+                     )
+                 findNavController().navigate(action, extras)*/
             }
 
         }
