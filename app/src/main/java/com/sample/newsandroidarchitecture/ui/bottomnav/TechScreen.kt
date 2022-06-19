@@ -1,11 +1,13 @@
 package com.sample.newsandroidarchitecture.ui.bottomnav
 
+import android.net.Uri
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,14 +19,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
+import com.google.gson.Gson
 import com.sample.newsandroidarchitecture.model.Article
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalMaterialApi
 @ExperimentalCoroutinesApi
 @ExperimentalFoundationApi
 @Composable
-fun TechScreen(viewModel: TechScreenViewModel) {
+fun TechScreen(viewModel: TechScreenViewModel, controller: NavHostController) {
     /*Column(
         modifier = Modifier
             .fillMaxSize()
@@ -42,15 +47,17 @@ fun TechScreen(viewModel: TechScreenViewModel) {
         content = {
             items(article.size) { index ->
                 ArticleItem(
-                    article = article[index]
+                    article = article[index],
+                    controller
                 )
             }
         }
     )
 }
 
+@ExperimentalMaterialApi
 @Composable
-fun ArticleItem(article: Article) {
+fun ArticleItem(article: Article, controller: NavHostController) {
     Card(
         elevation = 20.dp,
         backgroundColor = Color.Black,
@@ -59,7 +66,11 @@ fun ArticleItem(article: Article) {
             .padding(16.dp)
             .clip(RoundedCornerShape(10.dp))
             .height(250.dp)
-            .fillMaxWidth()
+            .fillMaxWidth(),
+        onClick = {
+            val json = Uri.encode(Gson().toJson(article))
+            controller.navigate(Screen.ArticleDetails.route + "/$json")
+        }
     ) {
 
         ConstraintLayout {
@@ -117,7 +128,7 @@ fun ArticleItem(article: Article) {
                     fontSize = 18.sp
                 )
                 Image(
-                    contentScale = ContentScale.Crop,
+                    contentScale = ContentScale.FillBounds,
                     painter =
                     painterResource(
                         id = com.sample.newsandroidarchitecture.R.drawable.ic_tech
